@@ -1,0 +1,15 @@
+{
+  "name": "pixel-pop-frenzy",
+  "version": "1.0.0",
+  "description": "A fast-paced pixel popping game",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+} 

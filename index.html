@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Pop Frenzy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Front Page -->
+    <div class="front-page" id="frontPage">
+        <div class="front-container">
+            <h1>Pixel Pop Frenzy</h1>
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="userName">Enter Your Name:</label>
+                    <input type="text" id="userName" placeholder="Your name here...">
+                </div>
+                <div class="input-group">
+                    <label>Connect Your Wallet:</label>
+                    <input type="text" id="walletAddressInput" placeholder="Enter your wallet address..." class="wallet-input">
+                    <button id="connectWallet" class="wallet-button">Connect Wallet</button>
+                    <div id="walletStatus" class="wallet-status">Not Connected</div>
+                    <div id="walletAddress" class="wallet-address" style="display: none;">
+                        <span>Connected Address:</span>
+                        <span id="addressDisplay"></span>
+                    </div>
+                </div>
+            </div>
+            <button id="startGame" class="next-button" disabled>Start Game</button>
+        </div>
+    </div>
+
+    <!-- Game Container (hidden initially) -->
+    <div class="game-container" id="gameContainer" style="display: none;">
+        <div class="header">
+            <h1>Pixel Pop Frenzy</h1>
+            <div class="wallet-section">
+                <div class="wallet-input">
+                    <input type="text" id="walletAddress" placeholder="Enter your wallet address" value="">
+                    <button id="saveWallet">Save Wallet</button>
+                </div>
+                <div id="playerStats" class="player-stats">
+                    <!-- Player stats will be displayed here -->
+                </div>
+            </div>
+            <div class="player-info">
+                <input type="text" id="playerName" placeholder="Enter your name" maxlength="15">
+                <span id="displayName"></span>
+                <div class="wallet-info">
+                    <span class="wallet-label">Coins:</span>
+                    <span id="walletBalance">0</span>
+                </div>
+                <div class="connection-status">
+                    <span id="connectionStatus">Connecting...</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stats-container">
+            <div class="score-container">
+                <span>Score:</span>
+                <span id="score">0</span>
+            </div>
+            <div class="combo-container">
+                <span>Combo:</span>
+                <span id="combo">x1</span>
+            </div>
+            <div class="time-container">
+                <span>Time:</span>
+                <span id="time">60</span>
+            </div>
+        </div>
+        
+        <div class="game-area">
+            <canvas id="gameCanvas"></canvas>
+            <div class="game-over">
+                <h2>Game Over!</h2>
+                <p>Final Score: <span id="finalScore">0</span></p>
+                <p>Highest Combo: <span id="finalCombo">x1</span></p>
+                <p>Coins Earned: <span id="coinsEarned">0</span></p>
+                <button id="restartButton">Play Again</button>
+            </div>
+            <div class="rule-display">
+                <p id="currentRule">Tap the shapes!</p>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="startButton">Start Game</button>
+            <button class="sound-toggle">🔊 Sound On</button>
+        </div>
+        
+        <div class="shop">
+            <h2>Shop</h2>
+            <div class="shop-items">
+                <div class="shop-item" data-item="theme1" data-cost="100">
+                    <h3>Neon Theme</h3>
+                    <p>100 coins</p>
+                    <button class="buy-button">Buy</button>
+                </div>
+                <div class="shop-item" data-item="theme2" data-cost="200">
+                    <h3>Retro Theme</h3>
+                    <p>200 coins</p>
+                    <button class="buy-button">Buy</button>
+                </div>
+                <div class="shop-item" data-item="powerup1" data-cost="50">
+                    <h3>Time Boost</h3>
+                    <p>+10 seconds</p>
+                    <p>50 coins</p>
+                    <button class="buy-button">Buy</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="multiplayer-info">
+            <h2>Players Online</h2>
+            <div class="players-list"></div>
+        </div>
+        
+        <div class="leaderboard">
+            <h2>Leaderboard</h2>
+            <div class="leaderboard-list"></div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html> 
